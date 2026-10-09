@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* Triadic palette: lapis blue (208deg), raspberry (328deg), moss green (88deg) */
+:root, [data-theme="light"] {
+  --bg: #F6F8FB; --bg-top: #E8F0FA; --surface: #FFFFFF; --text: #101B2C; --muted: #566377; --border: #D5DEEA;
+  --primary: #26619C; --primary-ink: #FFFFFF; --secondary: #9C2661; --tertiary: #619C26; --tint: #E3EDF8;
+  --footer-a: #1D4F82; --footer-b: #26619C;
+}
+[data-theme="dark"] {
+  --bg: #0A1120; --bg-top: #0E1A33; --surface: #121B2E; --text: #EAF0FA; --muted: #9AA8BF; --border: #223049;
+  --primary: #6AA6E0; --primary-ink: #08111F; --secondary: #E0709F; --tertiary: #9BD05A; --tint: #16253D;
+  --footer-a: #0B1E36; --footer-b: #12304F;
+}
+
+@theme inline {
+  --color-bg: var(--bg); --color-surface: var(--surface); --color-ink: var(--text); --color-muted: var(--muted);
+  --color-line: var(--border); --color-primary: var(--primary); --color-primary-ink: var(--primary-ink);
+  --color-secondary: var(--secondary); --color-tertiary: var(--tertiary); --color-tint: var(--tint);
+  --font-display: var(--font-bricolage), system-ui, sans-serif;
+  --font-sans: var(--font-dmsans), system-ui, sans-serif;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body { @apply font-sans text-[1.0625rem] leading-relaxed text-ink antialiased; background-color: var(--bg); transition: color .25s; }
+  /* Gradient background: three triadic glows over a lapis-tinted vertical wash */
+  body::before {
+    content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background:
+      radial-gradient(55rem 38rem at 8% -8%, color-mix(in srgb, var(--primary) 32%, transparent), transparent 65%),
+      radial-gradient(48rem 36rem at 105% 20%, color-mix(in srgb, var(--secondary) 20%, transparent), transparent 65%),
+      radial-gradient(52rem 40rem at 40% 112%, color-mix(in srgb, var(--tertiary) 22%, transparent), transparent 65%),
+      linear-gradient(180deg, var(--bg-top), var(--bg));
+  }
+  h1, h2, h3 { @apply font-display leading-[1.1] tracking-tight; }
+  p { @apply mb-4 max-w-[62ch]; }
+  :focus-visible { outline: 3px solid var(--secondary); outline-offset: 3px; border-radius: 6px; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-[min(1120px,100%-2.5rem)]; }
+  .btn { @apply inline-flex cursor-pointer items-center gap-2 rounded-full border-2 border-primary bg-primary px-6 py-3 font-semibold text-primary-ink transition hover:-translate-y-0.5; }
+  .btn-sm { @apply px-4 py-2 text-sm; }
+  .btn-ghost { @apply border-line bg-transparent text-ink hover:border-primary; }
+  .icon-btn { @apply grid size-10.5 cursor-pointer place-items-center rounded-full border border-line bg-surface/80 text-ink backdrop-blur transition hover:border-primary hover:text-primary disabled:cursor-not-allowed disabled:opacity-35; }
+  .link { @apply inline-flex items-center gap-1.5 font-semibold text-primary underline-offset-4 hover:underline; }
+  .chip { @apply rounded-full bg-tint px-4 py-1.5 text-[.95rem] font-medium text-primary; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}
