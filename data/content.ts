@@ -32,8 +32,8 @@ export const profile = {
 };
 
 export const experience: Job[] = [
-  { role: "Product Designer", company: "Mombee", period: "Present", points: ["I engineered a comprehensive component library in Figma using auto-layout and variants, optimizing  for  high-contrast  visibility.", "I designed an offline-first mobile architecture, mapping user flows that allow mothers to log health data, view prenatal tips, and track appointments offline."] },
-  { role: "Visual Designer & Manual Tester", company: "Gilah Global Limited", period: "2021 - 2023", points: ["I  executed  targeted  user  research  and  designed  impactful  visual  assets,  directly contributing to a 10% increase in the product's conversion rate.", "I conducted usability tests for 2 products, gathering valuable feedback from users."] },
+  { role: "Product Designer", company: "Mombee", period: "Present", points: ["I engineered a comprehensive component library in Figma using auto-layout and variants, optimizing  for  high-contrast  visibility", "I designed an offline-first mobile architecture, mapping user flows that allow mothers to log health data, view prenatal tips, and track appointments offline"] },
+  { role: "Visual Designer & Manual Tester", company: "Gilah Global Limited", period: "2021 - 2023", points: ["I  executed  targeted  user  research  and  designed  impactful  visual  assets,  directly contributing to a 10% increase in the product's conversion rate", "I conducted usability tests for 2 products, gathering valuable feedback from users"] },
   /*{ role: "UI/UX Designer", company: "Kobo Studio", period: "2019 - 2021", points: ["Delivered web and mobile work for 12 clients across retail and logistics.", "Introduced a shared prototyping workflow with developers."] },*/
 ];
 
