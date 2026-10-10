@@ -39,7 +39,7 @@ export const experience: Job[] = [
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: "mombee-maternal-and-child-care-app", title: "Mombee, Maternal Health & Immunization Tracking App (Independent Project, In Development)", category: "Healthcare, Mobile", year: "2026",
+    slug: "mombee-maternal-and-child-care-app", title: "Mombee Maternal Health & Immunization Tracking App (Independent Project, In Development)", category: "Healthcare, Mobile", year: "2026",
     summary: "Designed a mobile app that helps Nigerian women and their partners follow antenatal care, postnatal checks, childhood vaccinations, and developmental milestones from pregnancy through the child's first one to two years.",
     colors: ["#26619C", "#9C2661"], role: "UI/UX designer", duration: "6 months", team: "2 designers, 4 engineers, 1 PM",
     overview: "Nigeria had 2.1 million zero-dose children in 2024, the most of any country (WHO/UNICEF via BusinessDay, 2025). A zero-dose child has not received even the first dose of the DTP vaccine.",
