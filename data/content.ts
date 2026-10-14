@@ -28,7 +28,7 @@ export const profile = {
     dribbble: "https://dribbble.com/your-username",
     x: "https://x.com/oshozair",
   },
-  image: "/profile-pic.jpg",
+  image: "/profile-image.jpg",
 };
 
 export const experience: Job[] = [
