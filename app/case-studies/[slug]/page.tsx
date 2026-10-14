@@ -64,7 +64,7 @@ export default async function CaseStudyPage({ params }: Props) {
           </ul>
         </section>
 
-        <Link className="btn mt-6" href={`/case-studies/${next.slug}`}>Next: {next.title} <Arrow /></Link>
+        {/*<Link className="btn mt-6" href={`/case-studies/${next.slug}`}>Next: {next.title} <Arrow /></Link>*/}
       </main>
     </>
   );
